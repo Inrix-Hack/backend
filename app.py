@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response
 from api import getIncident
 
 app = Flask(__name__)
@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 @app.route('/incidents')
 def get_incidents():
-    return getIncident()
+    response = make_response(getIncident())
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 @app.route('/')
 def hello_world():
