@@ -14,6 +14,6 @@ def getPolygon(center_x="37.7749", center_y="-122.4194"):
 
     response = requests.request("GET", url, headers=headers, data=payload)
 
-    return response.json()['result']['polygons'][0]['geometry']['coordinates']
+    
 
 print(getPolygon())
