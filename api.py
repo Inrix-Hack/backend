@@ -18,3 +18,26 @@ def getFuelStations():
             continue
         fuelStations.append(x)
     return fuelStations
+
+
+def getRoutes(gases, fuel, mpg, max):
+    stations = []
+    payload = {}
+    headers = {
+        'accept': 'application/json',
+        'Authorization': f'Bearer {apiToken}'
+    }
+    for gas in gases:
+        name, coordinates, price = gas
+        lat, lon = coordinates
+        url = ""
+        
+        response = requests.request("GET", url, headers=headers, data=payload)
+        stations.append([response.json()['routes']['id'], gas, ((response.json()['routes']['totalDistance'] / mpg * 2) + (max - fuel)) * price, response.json()['routes']['totalDistance'], response.json()['routes']['travelTimeMinutes']])
+    stations.sort(key=lambda x: x[2])
+
+    return [{
+        "route" : station[0],
+        "station": station[1],
+        "distance": station[3]
+    } for station in stations[:3]]
