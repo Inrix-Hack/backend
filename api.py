@@ -1,6 +1,6 @@
 import json
 
-apiToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6InF0ZXQ0cjNva2UiLCJ0b2tlbiI6eyJpdiI6IjVmNjhiNzhlNGRhNWZhY2JiYmE2NjUxYWZkNzFhZjgzIiwiY29udGVudCI6ImVjNjE4NjY3YjlhZTdhZTlhNGYyZjg0OWZhZGEwNzQ1Njg5N2YwNjVhYjQxM2I4NWRlYjY5M2Q5ZjAxNjliMGNjNTNjMmE1OWQ1YjU3MDhlNDgzNjY5MGVmOTIwNzg4MWNkYmYzYWVlYTY0YWEyZTI0YzYxYjkxOGYzN2VjNGQ3NWM4NjgwNzMxNzIwNGNjYTkyNDQyNTA1M2YyMjQ0MGJjMmQ4ZWRhZjQ0Y2VhMzM2NmU5NTE2YTkwOTE0NTQzODNmYjM0MTFkODFiMTg4ZjU5NmIyZmQ2OGFkNjc2MzEwNjIxYTljYTQ5ZmVjNTI5NjUxZTg3MjQzNjQ2OWQ1NTNmODJhODQ4Mjc1OWY4ZWYzYzllYmM5NzZlNjVjZTE0MmVmMzg3N2YxMGE4MDVjZGZhNjcwNWI5NTFiMTRlNWYyYjE3NGZhOGUxNWM0ODQzMDIyMjJhM2MyYmMzOGFlZWU3NzUwM2NkMzYzNjdhZGM5ZDE4ZWNjZDI2NjgzZDU2YWE0ZTE3YzkxMGI0YTk2MWFhMTEyYjBkZGUwZWY5M2UzZjEzNTM2YjgwMTQyZGNhMzAwZDdlMjdiY2MzY2QwMDBjNzE4ZDcwZTA4OTMzNjM1Y2UwYjYyYmUyNWMwYjhkOTUxZWU3MjczZjlmNmQ3M2RkMDhlZDgyYjI3MmRmNzlhZjQzYTc0NjVkMGIyMGY5ZDk2OTM1MTE2ODUwNGIyNDc0MzIxNjQyOTJjYzA2MDI3ODgyYzY0ZmVlNjg1ODdhYmM5YTQ1ZDgwMjY3ZTc4OGVjZTdjNzYxZmFkNTc5OTEzYWQ5OTU4NDkwMmFhY2E0OTJjNTE0NmQ4NmRjOTU1N2RkZDYxYjgzMGEwNDM1YTUxMjM1MjA0In0sInNlY3VyaXR5VG9rZW4iOnsiaXYiOiI1ZjY4Yjc4ZTRkYTVmYWNiYmJhNjY1MWFmZDcxYWY4MyIsImNvbnRlbnQiOiJmZDM1OGE0ZGE4YmIyMGQxYWRmM2Y1NzQ5OGQyMjcxMDEyODljZTRjZDA3NjIyZGVlZDgzYWM4M2VhMjdhNTYyYWI0OTBjMjliZWUzMzlmNzdhMTMxNTMwIn0sImp0aSI6IjcwOGQ5YjBiLTU0NmMtNDA0NS04ZjBjLTE5YThhMzVhNTQwNSIsImlhdCI6MTY5OTc0NzgyMCwiZXhwIjoxNjk5NzUxNDIwfQ.5ym6RVGfylzKhhlGTofOMCOkreGSy0qbEEHcOOXKsVI"
+apiToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6InF0ZXQ0cjNva2UiLCJ0b2tlbiI6eyJpdiI6IjE5MDUwNWJlZDI4OWViMjlkYmUxZWE3ZjIwM2QyMDYyIiwiY29udGVudCI6Ijg4YjMyNjYwZmYwNjQxN2IzOGRkMmIzMzZlM2JiZWZkMDJmZDliMTE2YjNmNGNlNjI0N2VmNzAwYTU1NDM3OTJjZTY0ODQ0ZmM1OTQ0Y2JhZWI3MmNkN2NlYTMwYjMyZDliZjYyZTY4Yzg2Yzc3MWJjN2QyNGUxY2ZkNzI2NmM1ZWM4ZTNmOWRjMmIyNjIyZWI4YTBhNTA1N2FlMmQ0ZTIxMDNiMTc3MDlmOTc1ZTA5ZmYwYWI5MTRmODgwMjk1ODEyNjA5NzZkMDQzMWMzNDc0ZDdjY2UxZWE1YjM4YjZjODUxZjA2Mjc5NDJkMDIyYjllNmFjY2YwN2E5YWNhYmQ0Y2UwZDkxMzZhZTE2NTFmMzU0MmQzNGQ3MGJhMTJlNzAzYmZkODdiNWE3N2UzOThlOTU3YmFjMDk5ZDM0YzI4NTJkN2M3MDcxZDhhYWE2ODQzZDJmNmMxZDdkMmUyMmZmYmM2ODRmNjFlZDZiNmFlMzBjODI4YTZiOTBlZmY3ZDNkZTNkYzZmMjUxYmQzMTEyMWQ0MDljMTNlYTdkOGRiZTUxM2I1ODVkZDc0OGQzOWNlMzJlMzQzMzdhYzg1MGE4NTZjNDNmNmZmMzY4YzBjZTliYzViZGJhYmNmNDNmYjhhYTM0NjM1OWFhMTBkNDRiNzYzZTUyNzM1NzJmMTg2MmIxYzg3ZTc0ZmM2Y2FkY2EzZWQwNWUwZjZhZDMyYWQzZmU5NjkwN2UwNzhiNDQzNzkzYWNiMGU5OTI0OGUzMzQ0MGRmMDRjMmMwMmNiNWU4MDA4NGIxOTcyMmY0OWMyYzUyZmU5ZTgzZDljNzY0NzVjOWM3MThlZjY4NzE3M2ViZjk4YjJjNzMyZTA2MDNlNmU2MmQ5In0sInNlY3VyaXR5VG9rZW4iOnsiaXYiOiIxOTA1MDViZWQyODllYjI5ZGJlMWVhN2YyMDNkMjA2MiIsImNvbnRlbnQiOiJhYzhiMzQ1MWFmNmI1YjM4MjRjYzI1MTI2YjcwYmVmNTFjZmM4NDExNzEzZjZhOGEzZjZkZjk0NTljNzk3NDhiY2U3NWEzNGZhMWE5NzdjNWY2NWViNTQyIn0sImp0aSI6ImM0ZWNjNGI3LWZlODYtNDAyMi04YmExLWE2MzhkZTk2ZjI5ZSIsImlhdCI6MTY5OTc0MDIxMywiZXhwIjoxNjk5NzQzODEzfQ.Q6Rvz6vWQ7S0U7JrLvrJ01pAeXUDiDzscxvSr0cF1DM"
 
 def getFuelStations():
     file = open('fuelStations.json')
@@ -18,3 +18,26 @@ def getFuelStations():
             continue
         fuelStations.append(x)
     return fuelStations
+
+
+def getRoutes(gases, fuel, mpg, max):
+    stations = []
+    payload = {}
+    headers = {
+        'accept': 'application/json',
+        'Authorization': f'Bearer {apiToken}'
+    }
+    for gas in gases:
+        name, coordinates, price = gas
+        lat, lon = coordinates
+        url = ""
+        
+        response = requests.request("GET", url, headers=headers, data=payload)
+        stations.append([response.json()['routes']['id'], gas, ((response.json()['routes']['totalDistance'] / mpg * 2) + (max - fuel)) * price, response.json()['routes']['totalDistance'], response.json()['routes']['travelTimeMinutes']])
+    stations.sort(key=lambda x: x[2])
+
+    return [{
+        "route" : station[0],
+        "station": station[1],
+        "distance": station[3]
+    } for station in stations[:3]]

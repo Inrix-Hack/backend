@@ -1,15 +1,16 @@
-from flask import Flask, make_response
-from api import getFuelStations
+from flask import Flask
+from api import getIncident, getRoutes
 
 app = Flask(__name__)
 
 
-@app.route('/fuelStations')
+@app.route('/incidents')
 def get_incidents():
-    response = make_response(getFuelStations())
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+    return getIncident()
 
+@app.route('/routes')
+def get_routes():
+    return getRoutes()
 
 @app.route('/')
 def hello_world():
