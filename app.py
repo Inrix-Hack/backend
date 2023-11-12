@@ -3,6 +3,9 @@ from api import getFuelStations, getRoutes
 
 app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 
 @app.route('/fuelStations')
 def get_incidents():
@@ -12,14 +15,14 @@ def get_incidents():
 
 @app.route('/routes')
 def get_routes():
-    response = getRoutes()
-    response = make_response(getFuelStations())
+    currentFuelInCar = 10
+    mpgOfCar = 20
+    maximumCapacityOfCar = 20
+    fuelStations = getFuelStations()
+    # return str(len(fuelStations))
+    response = make_response(getRoutes(fuelStations, currentFuelInCar, mpgOfCar, maximumCapacityOfCar))
     response.headers['Access-Control-Allow-Origin'] = '*'
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+    return response
 
 
 if __name__ == '__main__':
