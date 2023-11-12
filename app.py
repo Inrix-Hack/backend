@@ -1,4 +1,4 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, request
 from api import getFuelStations, getRoutes
 
 app = Flask(__name__)
@@ -15,9 +15,10 @@ def get_incidents():
 
 @app.route('/routes')
 def get_routes():
-    currentFuelInCar = 10
-    mpgOfCar = 20
-    maximumCapacityOfCar = 20
+    currentFuelInCar = int(request.args.get('currentFuelInCar'))
+    mpgOfCar = int(request.args.get('mpgOfCar'))
+    maximumCapacityOfCar = int(request.args.get('maximumCapacityOfCar'))
+
     fuelStations = getFuelStations()
     response = make_response(getRoutes(fuelStations, currentFuelInCar, mpgOfCar, maximumCapacityOfCar))
     response.headers['Access-Control-Allow-Origin'] = '*'
