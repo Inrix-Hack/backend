@@ -19,7 +19,6 @@ def get_routes():
     mpgOfCar = 20
     maximumCapacityOfCar = 20
     fuelStations = getFuelStations()
-    # return str(len(fuelStations))
     response = make_response(getRoutes(fuelStations, currentFuelInCar, mpgOfCar, maximumCapacityOfCar))
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response

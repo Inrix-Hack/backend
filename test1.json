@@ -1,0 +1,38 @@
+[
+  {
+    "distance": 0.5,
+    "route": "37865115",
+    "station": {
+      "coordinates": [
+        -122.4373841,
+        37.7738772
+      ],
+      "name": "Arco",
+      "price": 4.999
+    }
+  },
+  {
+    "distance": 0.5,
+    "route": "37865111",
+    "station": {
+      "coordinates": [
+        -122.4354246,
+        37.7629642
+      ],
+      "name": "Rc Gas At Market And Castro",
+      "price": 5.199
+    }
+  },
+  {
+    "distance": 0.5,
+    "route": "37865114",
+    "station": {
+      "coordinates": [
+        -122.437817,
+        37.7737809
+      ],
+      "name": "76",
+      "price": 5.259
+    }
+  }
+]
