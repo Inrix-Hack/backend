@@ -55,10 +55,7 @@ def getRoutes(gasStations, currentFuelInCar, mpgOfCar, maximumCapacityOfCar):
 
     stations = []
     url = "https://api.iq.inrix.com/findRoute?wp_1=37.770581%2C-122.442550&wp_2=37.765297%2C-122.442527&format=json"
-    response = requests.request("GET", url, headers=headers, data=payload)
-    # print(response.json())
-    # return response.json()
-    counter = 0
+    
     session = requests.session()
     for gasStation in gasStations[:3]:
         headers = {
